@@ -24,14 +24,15 @@ class List extends Component {
         }
     }
     render() {
+        const {data, loading} = this.state;
+        if(loading) {
+            return <div>Loading...</div>
+        }
         return (
-            <div>
-                const {data, loading} = this.state;
+            <div class='row'>
 
-                {/* if(loading) {
-                    return <div>Loading...</div>
-                } */}
-                return data.map (movie => <Card key={movie.id} movie={movie} />) ;
+                 {data.map (movie => 
+                 <div class='col-sm-2'><Card key={movie.id} movie={movie} /></div>)} ;
             </div>
         );
     }
