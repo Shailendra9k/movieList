@@ -26,7 +26,12 @@ class List extends Component {
     render() {
         return (
             <div>
-                
+                const {data, loading} = this.state;
+
+                {/* if(loading) {
+                    return <div>Loading...</div>
+                } */}
+                return data.map (movie => <Card key={movie.id} movie={movie} />) ;
             </div>
         );
     }
